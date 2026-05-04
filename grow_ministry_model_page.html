@@ -1,60 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grow Ministry — Our Model</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --color-text-primary: #1a1a1a;
+      --color-text-secondary: #555;
+      --color-background-primary: #fff;
+      --color-background-secondary: #f7f7f6;
+      --color-border-tertiary: #e3e3e0;
+      --color-border-secondary: #d0d0cc;
+      --border-radius-lg: 10px;
+      --border-radius-md: 6px;
+    }
+    body { font-family: var(--font-sans); background: var(--color-background-primary); color: var(--color-text-primary); }
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-.gm{padding:2rem 0;font-family:var(--font-sans)}
-.gm-brand{font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:1.5rem}
-.gm-brand span{color:#4A7C3F}
-.pull-quote{font-size:15px;font-style:italic;color:var(--color-text-secondary);border-left:3px solid #4A7C3F;padding-left:1rem;margin-bottom:2rem;line-height:1.6;border-radius:0}
-.section-label{font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#4A7C3F;margin-bottom:1rem}
-.arc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--color-border-tertiary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;margin-bottom:2rem}
-.arc-cell{background:var(--color-background-primary);padding:1.25rem}
-.arc-num{font-size:11px;font-weight:500;color:#4A7C3F;margin-bottom:8px;letter-spacing:0.04em}
-.arc-title{font-size:15px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px;line-height:1.3}
-.arc-body{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
-.arc-tag{display:inline-block;margin-top:10px;font-size:11px;background:#EAF3DE;color:#27500A;padding:3px 8px;border-radius:4px}
-.vs-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:2rem}
-.vs-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:1rem}
-.vs-card.them{background:var(--color-background-secondary)}
-.vs-card.us{background:#f5faf3;border-color:#97C459}
-.vs-card-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px}
-.vs-card.them .vs-card-label{color:var(--color-text-secondary)}
-.vs-card.us .vs-card-label{color:#3B6D11}
-.vs-item{font-size:13px;color:var(--color-text-secondary);padding:4px 0;border-bottom:0.5px solid var(--color-border-tertiary);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
-.vs-item:last-child{border-bottom:none}
-.vs-dot{width:6px;height:6px;border-radius:50%;margin-top:5px;flex-shrink:0}
-.vs-card.them .vs-dot{background:var(--color-border-secondary)}
-.vs-card.us .vs-dot{background:#4A7C3F}
-.divider{height:0.5px;background:var(--color-border-tertiary);margin:1.5rem 0}
-.reply-wrap{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);padding:1.25rem}
-.reply-prompt{font-size:14px;color:var(--color-text-primary);font-weight:500;margin-bottom:12px;line-height:1.5}
-.reply-sub{font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem;line-height:1.5}
-.size-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:8px;margin-bottom:1rem}
-.size-opt{border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:8px 6px;cursor:pointer;font-size:13px;text-align:center;color:var(--color-text-secondary);background:var(--color-background-primary);transition:all 0.15s}
-.size-opt:hover{border-color:#4A7C3F;color:var(--color-text-primary)}
-.size-opt.sel{border-color:#4A7C3F;background:#f0f7ee;color:#2d5c24;border-width:1px}
-.reply-input{width:100%;font-size:13px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:10px 12px;background:var(--color-background-primary);color:var(--color-text-primary);resize:none;outline:none;min-height:70px;line-height:1.6;transition:border-color 0.15s}
-.reply-input:focus{border-color:#4A7C3F;box-shadow:0 0 0 3px rgba(74,124,63,0.1)}
-.btn-submit{margin-top:10px;width:100%;background:#4A7C3F;color:#fff;border:none;border-radius:var(--border-radius-md);padding:11px;font-size:14px;font-weight:500;cursor:pointer;transition:background 0.15s}
-.btn-submit:hover{background:#3a6331}
-.btn-submit:disabled{background:#9db89a;cursor:not-allowed}
-.ai-out{margin-top:1rem;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:1rem}
-.ai-out-head{font-size:11px;font-weight:500;color:#4A7C3F;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px}
-.ai-text{font-size:13px;color:var(--color-text-primary);line-height:1.7}
-.ai-text p{margin-bottom:8px}
-.ai-text p:last-child{margin-bottom:0}
-.dots{display:inline-flex;gap:4px;align-items:center}
-.dots span{width:5px;height:5px;border-radius:50%;background:#4A7C3F;animation:db 1.2s ease-in-out infinite}
-.dots span:nth-child(2){animation-delay:.2s}
-.dots span:nth-child(3){animation-delay:.4s}
-@keyframes db{0%,80%,100%{transform:translateY(0);opacity:.35}40%{transform:translateY(-5px);opacity:1}}
-.footer-cta{margin-top:1.5rem;display:flex;gap:10px}
-.btn-learn{flex:1;border:0.5px solid #4A7C3F;color:#4A7C3F;background:transparent;border-radius:var(--border-radius-md);padding:10px;font-size:13px;cursor:pointer;transition:background 0.15s;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
-.btn-learn:hover{background:#f0f7ee}
-.btn-book{flex:1;background:#4A7C3F;color:#fff;border:none;border-radius:var(--border-radius-md);padding:11px 16px;font-size:14px;font-weight:500;cursor:pointer;transition:background 0.15s;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
-.btn-book:hover{background:#3a6331}
-</style>
+    .gm { padding: 2rem; max-width: 680px; margin: 0 auto; }
+    .gm-brand { font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-secondary); margin-bottom: 1.5rem; }
+    .gm-brand span { color: #4A7C3F; }
+    .pull-quote { font-size: 15px; font-style: italic; color: var(--color-text-secondary); border-left: 3px solid #4A7C3F; padding-left: 1rem; margin-bottom: 2rem; line-height: 1.6; }
+    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: #4A7C3F; margin-bottom: 1rem; }
 
-<h2 class="sr-only">Grow Ministry — Our model: three things that make a faith excursion structurally different</h2>
+    .arc-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--color-border-tertiary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; margin-bottom: 2rem; }
+    .arc-cell { background: var(--color-background-primary); padding: 1.25rem; }
+    .arc-num { font-size: 11px; font-weight: 500; color: #4A7C3F; margin-bottom: 8px; letter-spacing: 0.04em; }
+    .arc-title { font-size: 15px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 8px; line-height: 1.3; }
+    .arc-body { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+    .arc-tag { display: inline-block; margin-top: 10px; font-size: 11px; background: #EAF3DE; color: #27500A; padding: 3px 8px; border-radius: 4px; }
+
+    .vs-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 2rem; }
+    .vs-card { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 1rem; }
+    .vs-card.them { background: var(--color-background-secondary); }
+    .vs-card.us { background: #f5faf3; border-color: #97C459; }
+    .vs-card-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+    .vs-card.them .vs-card-label { color: var(--color-text-secondary); }
+    .vs-card.us .vs-card-label { color: #3B6D11; }
+    .vs-item { font-size: 13px; color: var(--color-text-secondary); padding: 4px 0; border-bottom: 0.5px solid var(--color-border-tertiary); display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+    .vs-item:last-child { border-bottom: none; }
+    .vs-dot { width: 6px; height: 6px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+    .vs-card.them .vs-dot { background: var(--color-border-secondary); }
+    .vs-card.us .vs-dot { background: #4A7C3F; }
+
+    .divider { height: 0.5px; background: var(--color-border-tertiary); margin: 1.5rem 0; }
+
+    .reply-wrap { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); padding: 1.25rem; }
+    .reply-prompt { font-size: 14px; color: var(--color-text-primary); font-weight: 500; margin-bottom: 12px; line-height: 1.5; }
+    .reply-sub { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 1rem; line-height: 1.5; }
+    .size-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 8px; margin-bottom: 1rem; }
+    .size-opt { border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); padding: 8px 6px; cursor: pointer; font-size: 13px; text-align: center; color: var(--color-text-secondary); background: var(--color-background-primary); transition: all 0.15s; }
+    .size-opt:hover { border-color: #4A7C3F; color: var(--color-text-primary); }
+    .size-opt.sel { border-color: #4A7C3F; background: #f0f7ee; color: #2d5c24; border-width: 1px; }
+    .reply-input { width: 100%; font-size: 13px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); padding: 10px 12px; background: var(--color-background-primary); color: var(--color-text-primary); resize: none; outline: none; min-height: 70px; line-height: 1.6; transition: border-color 0.15s; }
+    .reply-input:focus { border-color: #4A7C3F; box-shadow: 0 0 0 3px rgba(74,124,63,0.1); }
+    .btn-submit { margin-top: 10px; width: 100%; background: #4A7C3F; color: #fff; border: none; border-radius: var(--border-radius-md); padding: 11px; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.15s; }
+    .btn-submit:hover { background: #3a6331; }
+    .btn-submit:disabled { background: #9db89a; cursor: not-allowed; }
+
+    .thankyou { margin-top: 1rem; background: var(--color-background-primary); border: 0.5px solid #97C459; border-radius: var(--border-radius-md); padding: 1.25rem; display: none; }
+    .thankyou-head { font-size: 13px; font-weight: 500; color: #4A7C3F; margin-bottom: 6px; }
+    .thankyou-body { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 14px; }
+    .btn-book-inline { display: inline-block; background: #4A7C3F; color: #fff; border-radius: var(--border-radius-md); padding: 10px 18px; font-size: 13px; font-weight: 500; text-decoration: none; transition: background 0.15s; }
+    .btn-book-inline:hover { background: #3a6331; }
+
+    .footer-cta { margin-top: 1.5rem; }
+    .btn-book { display: flex; align-items: center; justify-content: center; width: 100%; background: #4A7C3F; color: #fff; border: none; border-radius: var(--border-radius-md); padding: 13px 16px; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.15s; text-decoration: none; }
+    .btn-book:hover { background: #3a6331; }
+
+    @media (max-width: 560px) {
+      .arc-grid { grid-template-columns: 1fr; }
+      .vs-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
 
 <div class="gm">
   <div class="gm-brand">Grow<span>Ministry</span>.com</div>
@@ -105,7 +127,7 @@
 
   <div class="reply-wrap">
     <div class="reply-prompt">Would this model work for your congregation?</div>
-    <div class="reply-sub">Tell us what your typical group size looks like — we'll respond with how we'd design around it.</div>
+    <div class="reply-sub">Tell us what your typical group size looks like — we'll reach out with how we'd design around it.</div>
     <div class="size-grid" id="sizeGrid">
       <div class="size-opt" onclick="selSize(this,'Under 15')">Under 15</div>
       <div class="size-opt" onclick="selSize(this,'15–30')">15–30</div>
@@ -115,11 +137,10 @@
     </div>
     <textarea class="reply-input" id="replyNote" placeholder="Anything else? Your destination interest, timeline, or what resonated most from above…"></textarea>
     <button class="btn-submit" id="replyBtn" onclick="sendReply()">Send my reply ↗</button>
-    <div id="aiOut" style="display:none">
-      <div class="ai-out">
-        <div class="ai-out-head">Response from Grow Ministry</div>
-        <div class="ai-text" id="aiText"><div class="dots"><span></span><span></span><span></span></div></div>
-      </div>
+    <div class="thankyou" id="thankYou">
+      <div class="thankyou-head">Thanks — we'll be in touch.</div>
+      <div class="thankyou-body">The best next step is a short call so we can hear about your congregation and see if our model is the right fit.</div>
+      <a class="btn-book-inline" href="https://api.leadconnectorhq.com/widget/bookings/growministry" target="_blank" rel="noopener">Schedule a call with our team ↗</a>
     </div>
   </div>
 
@@ -129,55 +150,22 @@
 </div>
 
 <script>
-let selGroupSize = '';
-function selSize(el, val) {
-  document.querySelectorAll('#sizeGrid .size-opt').forEach(o => o.classList.remove('sel'));
-  el.classList.add('sel');
-  selGroupSize = val;
-}
+  let selGroupSize = '';
 
-async function sendReply() {
-  if (!selGroupSize) { alert('Please select a group size.'); return; }
-  const btn = document.getElementById('replyBtn');
-  btn.disabled = true;
-  btn.textContent = 'Sending…';
-  const note = document.getElementById('replyNote').value.trim();
-  const out = document.getElementById('aiOut');
-  out.style.display = 'block';
-
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-6',
-        max_tokens: 600,
-        system: `You are a senior ministry travel consultant at Grow Ministry — a faith-based excursion company that takes congregations to places where Scripture comes alive. You design transformation experiences, not tours. 
-
-Respond warmly and specifically to a faith leader who just told you their group size and expressed interest in your model. Your response should:
-1. Affirm their group size and explain specifically how Grow Ministry designs for that size
-2. Reference the three-part transformation arc (pre-trip prep, ministry-led on-site, post-trip integration) in the context of their size
-3. Offer a concrete next step — a short call or a sample itinerary
-
-Keep it under 150 words. Pastoral warmth, no sales language. First person, no bullet points.`,
-        messages: [{
-          role: 'user',
-          content: `Group size: ${selGroupSize}\nAdditional notes: ${note || 'None'}\n\nPlease respond personally to this faith leader.`
-        }]
-      })
-    });
-    const json = await res.json();
-    const text = json.content?.[0]?.text || 'Thank you — a member of our team will reach out within one business day.';
-    const container = document.getElementById('aiText');
-    container.innerHTML = '';
-    text.split('\n').filter(l => l.trim()).forEach(para => {
-      const p = document.createElement('p');
-      p.textContent = para;
-      container.appendChild(p);
-    });
-  } catch(e) {
-    document.getElementById('aiText').innerHTML = '<p>Thank you for sharing. A Grow Ministry team member will follow up with you shortly with details tailored to your group size.</p>';
+  function selSize(el, val) {
+    document.querySelectorAll('#sizeGrid .size-opt').forEach(o => o.classList.remove('sel'));
+    el.classList.add('sel');
+    selGroupSize = val;
   }
-  btn.textContent = 'Response sent';
-}
+
+  function sendReply() {
+    if (!selGroupSize) { alert('Please select a group size.'); return; }
+    const btn = document.getElementById('replyBtn');
+    btn.disabled = true;
+    btn.textContent = 'Sent ✓';
+    document.getElementById('thankYou').style.display = 'block';
+  }
 </script>
+
+</body>
+</html>
